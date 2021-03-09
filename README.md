@@ -1,8 +1,7 @@
 # What is this Superchat App?
+This is a chat web-app build using only React & Firebase. This project showcases Firebase abilities to be used as a pseudo-backend & managing authentication and React's functionality to create good looking UI easily.
 
-This is a chat app build using only React & Firebase. This project showcases Firebase abilities to be used as a pseudo-backend & managing authentication and React's functionality to create good looking UI easily.
-
-## How to Install
+## How to Install?
 
 1. Clone the repo
 2. run npm install
