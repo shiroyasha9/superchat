@@ -1,11 +1,22 @@
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth, db } from '../firebase';
 
 export default function Form() {
   const [message, setMessage] = useState('');
+  const [user] = useAuthState(auth);
 
   const sendMessageHandler = async e => {
     e.preventDefault();
-    console.log(message);
+    const { uid, photoURL } = user;
+    await addDoc(collection(db, 'messages'), {
+      text: message,
+      createdAt: serverTimestamp(),
+      uid,
+      photoURL
+    });
+    setMessage('');
   };
 
   return (
