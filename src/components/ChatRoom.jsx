@@ -6,7 +6,7 @@ import ChatMessage from './ChatMessage';
 
 export default function ChatRoom({ spanRef }) {
   const messagesRef = collection(db, 'messages');
-  const q = query(messagesRef, orderBy('createdAt'), limit(25));
+  const q = query(messagesRef, orderBy('createdAt', 'desc'), limit(25));
   const [messages, loading] = useCollectionData(q, { idField: 'id' });
 
   if (loading) {
@@ -16,14 +16,16 @@ export default function ChatRoom({ spanRef }) {
   return (
     <div className='chat-room'>
       {messages &&
-        messages.map(msg => (
-          <ChatMessage
-            key={msg.id}
-            text={msg.text}
-            uid={msg.uid}
-            photoURL={msg.photoURL}
-          />
-        ))}
+        messages
+          .reverse()
+          .map(msg => (
+            <ChatMessage
+              key={msg.id}
+              text={msg.text}
+              uid={msg.uid}
+              photoURL={msg.photoURL}
+            />
+          ))}
       <span ref={spanRef}></span>
     </div>
   );
