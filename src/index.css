@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply mx-auto flex min-h-screen items-center justify-center bg-purple-500 p-4 text-white;
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex h-full w-full flex-col items-center justify-center gap-4;
+  }
+  .primary-button {
+    @apply rounded-md bg-lemon px-6 py-2 font-semibold text-black;
+  }
+  .title {
+    @apply mb-2 text-3xl font-bold;
+  }
+}
