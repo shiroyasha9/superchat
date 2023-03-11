@@ -75,4 +75,52 @@
   .input-form {
     @apply mt-2 rounded-md shadow-sm flex items-center justify-between w-full gap-x-3;
   }
+  .account-header {
+    @apply text-2xl font-bold leading-7 text-center py-6 px-4 sm:px-6 lg:px-8;
+  }
+
+  .account-info {
+    @apply flex flex-col md:flex-row md:space-x-4 justify-center items-center;
+  }
+
+  .account-info img {
+    @apply h-24 w-24 rounded-full object-cover;
+  }
+
+  .account-info-text {
+    @apply mt-4 md:mt-0 md:text-left text-center;
+  }
+  .account-info-text > h3 {
+    @apply text-lg font-medium leading-6;
+  }
+
+  .account-info-text p {
+    @apply mt-1 text-sm leading-5 text-gray-300;
+  }
+
+  .account-messages {
+    @apply max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
+  }
+
+  .account-messages > h2 {
+    @apply text-2xl font-semibold leading-7;
+  }
+
+  .account-messages ul {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .account-messages li {
+    @apply col-span-1 flex shadow-sm rounded-md;
+  }
+
+  .emoji-text {
+    @apply flex-shrink-0 flex items-center justify-center w-16 bg-lemon text-xl font-medium rounded-l-md;
+  }
+  .message-info {
+    @apply flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate;
+  }
+  .message-info-text {
+    @apply text-gray-900 font-medium hover:text-gray-600;
+  }
 }
