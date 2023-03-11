@@ -21,4 +21,27 @@
   .google-icon {
     @apply h-4 w-4;
   }
+  .message {
+    @apply flex items-center gap-x-3 m-2;
+  }
+
+  .sent {
+    @apply flex-row-reverse;
+  }
+
+  .sent p {
+    @apply bg-lemon text-black self-end;
+  }
+  .received p {
+    @apply bg-white text-black;
+  }
+  .profile-pic {
+    @apply h-10 w-10 rounded-full;
+  }
+  .message-text {
+    @apply rounded-2xl px-6 py-2 max-w-[80%] break-words;
+  }
+  .chat-room {
+    @apply flex flex-col bg-black/30 w-[90vw] h-[60vh] overflow-y-scroll rounded-md p-2;
+  }
 }
