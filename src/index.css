@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a5a7ac #374151;
+  font-family: 'Rubik', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a5a7ac;
+  border-radius: 999px;
+}
+
+@layer base {
+  body {
+    @apply mx-auto flex min-h-screen items-center justify-center bg-purple-900 bg-gradient-to-b from-purple-700 to-purple-1000 p-4 text-white;
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex h-full w-full flex-col items-center justify-center gap-4;
+  }
+  .primary-button {
+    @apply rounded-md bg-lemon px-3 md:px-6 py-2 font-semibold text-black flex items-center justify-center gap-x-1.5 hover:bg-lemon-dark;
+  }
+  .secondary-button {
+    @apply rounded-md bg-transparent border-white hover:border-gray-200 hover:text-gray-200 border px-3 md:px-6 py-2 font-semibold flex items-center justify-center gap-x-1.5;
+  }
+  .title {
+    @apply mb-2 text-3xl font-semibold;
+  }
+  .google-icon {
+    @apply h-4 w-4;
+  }
+  .message {
+    @apply flex items-center gap-x-3 m-2;
+  }
+
+  .sent {
+    @apply flex-row-reverse;
+  }
+
+  .sent p {
+    @apply bg-lemon text-black self-end;
+  }
+  .received p {
+    @apply bg-white text-black;
+  }
+  .profile-pic {
+    @apply h-10 w-10 rounded-full;
+  }
+  .message-text {
+    @apply rounded-2xl px-6 py-2 max-w-[80%] break-words;
+  }
+  .chat-room {
+    @apply flex flex-col bg-black/30 w-[90vw] h-[70vh]  md:h-[70vh] overflow-y-scroll rounded-md p-2;
+  }
+  .header {
+    @apply flex md:flex-row flex-col items-center justify-between w-full md:gap-y-0 gap-y-3;
+  }
+  .submit-button {
+    @apply bg-lemon hover:bg-lemon-dark text-black font-semibold py-1.5 px-4 rounded-md disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .input {
+    @apply block w-full rounded-md border py-1.5 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset border-slate-300 focus:ring-lemon sm:text-sm sm:leading-6 focus:outline-none focus:border-lemon;
+  }
+  .input-form {
+    @apply mt-2 rounded-md shadow-sm flex items-center justify-between w-full gap-x-3;
+  }
+  .account-header {
+    @apply text-2xl font-semibold leading-7 text-center py-6 px-4 sm:px-6 lg:px-8;
+  }
+
+  .account-info {
+    @apply flex flex-col md:flex-row md:space-x-4 justify-center items-center;
+  }
+
+  .account-info img {
+    @apply h-24 w-24 rounded-full object-cover;
+  }
+
+  .account-info-text {
+    @apply mt-4 md:mt-0 md:text-left text-center;
+  }
+  .account-info-text > h3 {
+    @apply text-lg font-medium leading-6;
+  }
+
+  .account-info-text p {
+    @apply mt-1 text-sm leading-5 text-gray-300;
+  }
+
+  .account-messages {
+    @apply max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
+  }
+
+  .account-messages > h2 {
+    @apply text-2xl font-semibold leading-7;
+  }
+
+  .account-messages ul {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .account-messages li {
+    @apply col-span-1 flex shadow-sm rounded-md;
+  }
+
+  .emoji-text {
+    @apply flex-shrink-0 flex items-center justify-center w-16 bg-lemon text-xl font-medium rounded-l-md;
+  }
+  .message-info {
+    @apply flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate;
+  }
+  .message-info-text {
+    @apply text-gray-900 font-medium hover:text-gray-600;
+  }
 }
