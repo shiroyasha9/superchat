@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../firebase';
 
-export default function Form() {
+export default function Form({ scrollToBottomHandler }) {
   const [message, setMessage] = useState('');
   const [user] = useAuthState(auth);
 
@@ -17,6 +17,7 @@ export default function Form() {
       photoURL
     });
     setMessage('');
+    scrollToBottomHandler();
   };
 
   return (

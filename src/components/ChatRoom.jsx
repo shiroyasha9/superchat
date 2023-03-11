@@ -4,7 +4,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
 import ChatMessage from './ChatMessage';
 
-export default function ChatRoom() {
+export default function ChatRoom({ spanRef }) {
   const messagesRef = collection(db, 'messages');
   const q = query(messagesRef, orderBy('createdAt'), limit(25));
   const [messages, loading] = useCollectionData(q, { idField: 'id' });
@@ -24,6 +24,7 @@ export default function ChatRoom() {
             photoURL={msg.photoURL}
           />
         ))}
+      <span ref={spanRef}></span>
     </div>
   );
 }
