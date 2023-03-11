@@ -27,7 +27,8 @@ export default function Login() {
           </h1>
           <p className='mb-2'>Want to get started?</p>
           <button onClick={() => signInWithGoogle()} className='primary-button'>
-            Sign in with Google
+            Sign in with
+            <img src='/google.svg' alt='Google' className='google-icon' />
           </button>
         </>
       )}

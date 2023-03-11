@@ -13,9 +13,12 @@
     @apply flex h-full w-full flex-col items-center justify-center gap-4;
   }
   .primary-button {
-    @apply rounded-md bg-lemon px-6 py-2 font-semibold text-black;
+    @apply rounded-md bg-lemon px-6 py-2 font-semibold text-black flex items-center justify-center gap-x-1.5;
   }
   .title {
     @apply mb-2 text-3xl font-bold;
+  }
+  .google-icon {
+    @apply h-4 w-4;
   }
 }
