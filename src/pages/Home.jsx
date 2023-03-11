@@ -8,10 +8,15 @@ export default function Home() {
   const [user] = useAuthState(auth);
   return (
     <div className='main'>
-      <h1>Hello, {user.displayName}</h1>
-      <button onClick={() => signOut()} className='primary-button'>
-        Sign out
-      </button>
+      <div className='header'>
+        <p className='text-xl font-semibold'>
+          Remember to be polite,{' '}
+          <span className='text-lemon font-bold'>{user.displayName}!</span> 🥰
+        </p>
+        <button onClick={() => signOut()} className='primary-button'>
+          Sign out
+        </button>
+      </div>
       <ChatRoom />
     </div>
   );

@@ -13,7 +13,7 @@
     @apply flex h-full w-full flex-col items-center justify-center gap-4;
   }
   .primary-button {
-    @apply rounded-md bg-lemon px-6 py-2 font-semibold text-black flex items-center justify-center gap-x-1.5;
+    @apply rounded-md bg-lemon px-3 md:px-6 py-2 font-semibold text-black flex items-center justify-center gap-x-1.5;
   }
   .title {
     @apply mb-2 text-3xl font-bold;
@@ -42,6 +42,9 @@
     @apply rounded-2xl px-6 py-2 max-w-[80%] break-words;
   }
   .chat-room {
-    @apply flex flex-col bg-black/30 w-[90vw] h-[60vh] overflow-y-scroll rounded-md p-2;
+    @apply flex flex-col bg-black/30 w-[90vw] h-[80vh]  md:h-[70vh] overflow-y-scroll rounded-md p-2;
+  }
+  .header {
+    @apply flex items-center justify-between w-full;
   }
 }
