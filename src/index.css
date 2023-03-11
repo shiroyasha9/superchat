@@ -48,7 +48,7 @@
     @apply flex items-center justify-between w-full;
   }
   .submit-button {
-    @apply bg-lemon text-black font-semibold py-1.5 px-4 rounded-md;
+    @apply bg-lemon text-black font-semibold py-1.5 px-4 rounded-md disabled:opacity-60 disabled:cursor-not-allowed;
   }
   .input {
     @apply block w-full rounded-md border py-1.5 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset border-slate-300 focus:ring-lemon sm:text-sm sm:leading-6 focus:outline-none focus:border-lemon;
