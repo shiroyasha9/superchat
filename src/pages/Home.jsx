@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
+import ChatRoom from '../components/ChatRoom';
 import { auth } from '../firebase';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <button onClick={() => signOut()} className='primary-button'>
         Sign out
       </button>
+      <ChatRoom />
     </div>
   );
 }
