@@ -3,7 +3,11 @@ import { Navigate } from 'react-router';
 import { auth } from '../firebase';
 
 export default function PrivateRoute({ children }) {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   if (user) {
     return <>{children}</>;
