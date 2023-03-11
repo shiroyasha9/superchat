@@ -1,25 +1,29 @@
+import { collection, limit, orderBy, query } from 'firebase/firestore';
 import React from 'react';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { db } from '../firebase';
 import ChatMessage from './ChatMessage';
 
 export default function ChatRoom() {
+  const messagesRef = collection(db, 'messages');
+  const q = query(messagesRef, orderBy('createdAt'), limit(25));
+  const [messages, loading] = useCollectionData(q, { idField: 'id' });
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className='chat-room'>
-      <ChatMessage
-        text={
-          'Hi  dsfjasdfkljsdajfkjakldsjfkjadklsfjlkajsdklfjlkadsjlkfjalksjdlfkjalksdjflkjlkdfdafslksdjfjdasjfjasdkjfkjsdkfkjdksjfkjdkasjfkjadksjfkjasdkjfkjaskdjfkjdsafjlsd;jfkjsd;akfjkjasdkfjkjsdkfjsjdafkadsj'
-        }
-        uid={'8A0gaQKLUMPPG6kHsPPA2tcuM6G2'}
-        photoURL={
-          'https://lh3.googleusercontent.com/a/AGNmyxaF3eWvgrvE2cYSIoAKoBSuKDawdXk7iBdKjSNJ=s96-c'
-        }
-      />
-      <ChatMessage
-        text={'Meow'}
-        uid={'8A0gaQKLUMPPdG6kHsPPA2tcuM6G2'}
-        photoURL={
-          'https://lh3.googleusercontent.com/a/AGNmyxaF3eWvgrvE2cYSIoAKoBSuKDawdXk7iBdKjSNJ=s96-c'
-        }
-      />
+      {messages &&
+        messages.map(msg => (
+          <ChatMessage
+            key={msg.id}
+            text={msg.text}
+            uid={msg.uid}
+            photoURL={msg.photoURL}
+          />
+        ))}
     </div>
   );
 }
