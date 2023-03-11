@@ -42,9 +42,18 @@
     @apply rounded-2xl px-6 py-2 max-w-[80%] break-words;
   }
   .chat-room {
-    @apply flex flex-col bg-black/30 w-[90vw] h-[80vh]  md:h-[70vh] overflow-y-scroll rounded-md p-2;
+    @apply flex flex-col bg-black/30 w-[90vw] h-[75vh]  md:h-[70vh] overflow-y-scroll rounded-md p-2;
   }
   .header {
     @apply flex items-center justify-between w-full;
+  }
+  .submit-button {
+    @apply bg-lemon text-black font-semibold py-1.5 px-4 rounded-md;
+  }
+  .input {
+    @apply block w-full rounded-md border py-1.5 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset border-slate-300 focus:ring-lemon sm:text-sm sm:leading-6 focus:outline-none focus:border-lemon;
+  }
+  .input-form {
+    @apply mt-2 rounded-md shadow-sm flex items-center justify-between w-full gap-x-3;
   }
 }

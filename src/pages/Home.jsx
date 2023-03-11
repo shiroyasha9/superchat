@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import ChatRoom from '../components/ChatRoom';
+import Form from '../components/Form';
 import { auth } from '../firebase';
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
     <div className='main'>
       <div className='header'>
         <p className='text-xl font-semibold'>
-          Remember to be polite,{' '}
+          Be polite,{' '}
           <span className='text-lemon font-bold'>{user.displayName}!</span> 🥰
         </p>
         <button onClick={() => signOut()} className='primary-button'>
@@ -18,6 +19,7 @@ export default function Home() {
         </button>
       </div>
       <ChatRoom />
+      <Form />
     </div>
   );
 }
