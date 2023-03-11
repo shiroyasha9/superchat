@@ -4,7 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lemon: '#F2FF49'
+        black: '#18181b',
+        lemon: '#faf33e',
+        'lemon-dark': '#f2e600',
+        purple: {
+          1000: '#451B66'
+        }
       }
     }
   },
