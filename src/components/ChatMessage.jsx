@@ -11,7 +11,8 @@ export default function ChatMessage({ text, uid, photoURL }) {
         alt='profile pic'
         className='profile-pic'
         src={
-          photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'
+          photoURL ||
+          'https://i.pinimg.com/236x/4c/21/d0/4c21d08d5cc583a01d59c33f0ddf2436.jpg'
         }
       />
       <p className='message-text'>{text}</p>
