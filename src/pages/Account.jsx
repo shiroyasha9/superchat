@@ -21,7 +21,11 @@ export default function Account() {
       <h2 className='account-header'>Account Dashboard</h2>
       <div className='account-info'>
         <div>
-          <img src={user.photoURL} alt={user.displayName} />
+          <img
+            src={user.photoURL}
+            alt={user.displayName}
+            referrerPolicy='no-referrer'
+          />
         </div>
         <div className='account-info-text'>
           <h3>{user.displayName}</h3>
